@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+ion-content {
+    --color: black;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 86px;
+}
+.signup {
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+a {
+    color: #F19B27
+}
+
+input, textarea {
+    background-color: #e8e8e8;
+}
+
+input, button, textarea {
+    outline: none;
+    margin-top: 8px;
+    border: none;
+    color: black;
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+input, button {
+    height: 42px;
+}
+
+input[type="submit"], button {
+    background-color: #F19B27;
+    color: white;
+}

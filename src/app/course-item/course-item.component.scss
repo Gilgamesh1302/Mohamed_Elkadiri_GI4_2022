@@ -1,0 +1,44 @@
+.container {
+    background: #252164;
+    padding: 16px;
+    color: white;
+    border-radius: 16px;
+}
+.image-container, img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.image-container {
+    padding: 8px;
+}
+
+.footer {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer button{
+    flex: 1 1 auto !important;
+    margin-left: 8px;
+    background-color: #F19B27;
+    border: none;
+    color: white;
+    padding: 8px;
+    height: 42px;
+    border-radius: 8px;
+}
+
+.cancel {
+    background-color: #da1313 !important;
+}
+
+p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 200;
+}

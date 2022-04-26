@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard/courses"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Course Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <div class="image-container">
+      <img [src]="imageUrl" />
+    </div>
+
+    <h1>{{courseItem?.name}}</h1>
+    <p>
+      <b>Date : </b>
+      <span>{{ courseItem?.date }}</span>
+    </p>
+    <p>
+      <b>Price : </b>
+      <span>{{ courseItem?.price }} DH</span>
+    </p>
+    <p>
+      <b>Description : </b><br />
+      <span>{{ courseItem?.description }}</span>
+    </p>
+  </div>
+  <div class="footer">
+    <div *ngIf="!isUserAdmin">
+      <button *ngIf="!isEnrolled" (click)="enrollInCourse()">Enroll</button>
+      <button class="cancel" *ngIf="isEnrolled" (click)="cancelEnrollment()">
+        Cancel
+      </button>
+    </div>
+    <button class="cancel" *ngIf="isUserAdmin" (click)="removeCourse()">
+      Remove
+    </button>
+  </div>
+</ion-content>

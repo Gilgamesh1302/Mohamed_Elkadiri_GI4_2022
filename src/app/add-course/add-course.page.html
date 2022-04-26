@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Course</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <form [formGroup]="addCourseForm" (ngSubmit)="addCourseToFirebase()">
+      <h1>Add a New Course</h1>
+      <p>
+        <label for="name">Course name</label><br />
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Course name"
+          required
+        />
+      </p>
+      <p>
+        <label for="date">Date</label><br />
+        <input
+          id="date"
+          type="text"
+          formControlName="date"
+          placeholder="dd/mm/yyyy"
+          required
+        />
+      </p>
+      <p>
+        <label for="price">Price</label><br />
+        <input
+          id="price"
+          formControlName="price"
+          type="number"
+          min="0"
+          step="0.1"
+          placeholder="price (DH)"
+          required
+        />
+      </p>
+      <p>
+        <label for="picture">Picture</label><br />
+        <input
+          id="picture"
+          type="file"
+          (change)="onFileChange($event)"
+          formControlName="image"
+          accept="image/*"
+          placeholder="choose"
+          required
+        />
+      </p>
+      <p>
+        <label for="description">Description</label><br />
+        <textarea
+          id="description"
+          rows="4"
+          formControlName="description"
+          type="text"
+          placeholder="Description"
+          required
+        ></textarea>
+      </p>
+      <p>
+        <input type="submit" [disabled]="addCourseForm.invalid" value="Add" />
+      </p>
+    </form>
+  </div>
+</ion-content>

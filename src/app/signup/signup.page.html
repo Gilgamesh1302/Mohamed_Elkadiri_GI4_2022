@@ -1,0 +1,87 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <form [formGroup]="signupForm" (ngSubmit)="signUpUser()">
+      <h1>Join Our Community</h1>
+      <p>
+        <label for="firstName">First Name</label><br />
+        <input
+          id="firstName"
+          type="text"
+          formControlName="firstName"
+          placeholder="First Name"
+          required
+        /><br />
+        <span
+          *ngIf="signupForm.get('firstName').invalid && (signupForm.get('firstName').dirty || signupForm.get('firstName').touched)"
+        >
+          please enter your first name
+        </span>
+      </p>
+      <p>
+        <label for="lastName">Last Name</label><br />
+        <input
+          id="lastName"
+          type="text"
+          placeholder="Last Name"
+          formControlName="lastName"
+          required
+        /><br />
+        <span
+          *ngIf="signupForm.get('lastName').invalid && (signupForm.get('lastName').dirty || signupForm.get('lastName').touched)"
+        >
+          please enter your last Name
+        </span>
+      </p>
+      <p>
+        <label for="email">E-mail</label><br />
+        <input
+          id="email"
+          type="email"
+          placeholder="E-mail"
+          formControlName="email"
+          required
+        /><br />
+        <span
+          *ngIf="signupForm.get('email').invalid && (signupForm.get('email').dirty || signupForm.get('email').touched)"
+        >
+          please enter a valid email
+        </span>
+      </p>
+      <p>
+        <label for="password">Password</label><br />
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          required
+        /><br />
+        <span
+          *ngIf="signupForm.get('password').invalid && (signupForm.get('password').dirty || signupForm.get('password').touched)"
+        >
+          password must be at least 8 characters
+        </span>
+      </p>
+      <p>
+        <label for="confirmPassword">Confirm Password</label><br />
+        <input
+          id="confirmPassword"
+          type="password"
+          placeholder="confirmPassword"
+          formControlName="confirmPassword"
+          required
+        /><br />
+        <span *ngIf="signupForm.errors?.noMatch">
+          passwords don't match, please try again
+        </span>
+      </p>
+      <p>
+        <input type="submit" value="Sign Up" [disabled]="signupForm.invalid" />
+      </p>
+    </form>
+  </div>
+  <div class="signup">
+    <p>Already have an account ?</p>
+    <button routerLink="/login">Log In</button>
+  </div>
+</ion-content>

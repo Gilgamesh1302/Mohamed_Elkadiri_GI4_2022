@@ -11,6 +11,31 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+      path: 'dashboard',
+      redirectTo: 'dashboard/courses',
+      pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+      path: 'courses/:courseId',
+      loadChildren: () => import('./course-detail/course-detail.module').then(c => c.CourseDetailPageModule),
+  },
+  {
+    path: 'add-course',
+    loadChildren: () => import('./add-course/add-course.module').then( m => m.AddCoursePageModule)
+  },
 ];
 
 @NgModule({

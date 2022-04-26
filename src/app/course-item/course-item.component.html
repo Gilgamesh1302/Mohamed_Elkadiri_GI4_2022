@@ -1,0 +1,19 @@
+<div class="container" (click)="showDetail($event)">
+  <div class="image-container">
+    <img [src]="imageUrl" />
+  </div>
+  <h4>{{ courseItem.name }}</h4>
+  <p>{{ courseItem.date }}</p>
+  <div class="footer">
+    <p>{{ courseItem.price }} Dh</p>
+    <div *ngIf="!isUserAdmin">
+      <button (click)="enrollInCourse()" *ngIf="!isEnrolled" #b>Enroll</button>
+      <button (click)="cancelEnrollment()" class="cancel" *ngIf="isEnrolled" #b>
+        Cancel
+      </button>
+    </div>
+    <button class="cancel" *ngIf="isUserAdmin" #b (click)="removeCourse()">
+      Remove
+    </button>
+  </div>
+</div>

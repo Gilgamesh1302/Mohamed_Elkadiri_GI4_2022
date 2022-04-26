@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+ion-content {
+    --background: #252164;
+    --color: #ffffff
+}
+
+
+.container {
+    display: flex;
+    margin-bottom: 100px;
+    flex-direction: column;
+    min-height: calc(100% - 100px);
+    justify-content: center;
+}
+.signup {
+    position:fixed;
+    width: 100%;
+    padding: 0 16px 16px 16px;
+    background-color: #252164;
+    bottom:0;
+    left:0;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+a {
+    color: #F19B27
+}
+
+input, button {
+    outline: none;
+    margin-top: 8px;
+    border: none;
+    color: black;
+    padding: 8px;
+    width: 100%;
+    height: 42px;
+    border-radius: 8px;
+}
+
+input[type="submit"], button {
+    background-color: #F19B27;
+    color: white;
+}

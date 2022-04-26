@@ -1,5 +1,7 @@
 {
   "name": "formation",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

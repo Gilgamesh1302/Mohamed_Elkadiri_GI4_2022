@@ -1,0 +1,23 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="courses">
+      <ion-icon name="list"></ion-icon>
+      <ion-label>Courses</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="enrolled-courses" *ngIf="!isUserAdmin">
+      <ion-icon name="star"></ion-icon>
+      <ion-label>My Courses</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="add-course" *ngIf="isUserAdmin">
+      <ion-icon name="add-circle"></ion-icon>
+      <ion-label>Add Course</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="signOut()">
+      <ion-icon name="log-out"></ion-icon>
+      <ion-label>Sign Out</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
